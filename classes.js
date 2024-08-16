@@ -1,3 +1,5 @@
+/* A class is a logical inteties its a ES6 concept its provide a more structured and cleaner way to work with objects*/
+
 // class Student{
 //     setDetails(sid,sname,grade){
 //         this.sid=sid;

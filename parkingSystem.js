@@ -31,3 +31,10 @@ console.log(parkingSystem.addCar(1)); // true
 console.log(parkingSystem.addCar(2)); // true
 console.log(parkingSystem.addCar(3)); // false
 console.log(parkingSystem.addCar(1)); // false
+
+
+// Time Complexity
+// O(1): The algorithm has simple if else tasks. Thus time complexity is O(1).
+
+// Space Complexity 
+// O(1): no extra space used.

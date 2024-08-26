@@ -1,8 +1,10 @@
-const score = {
+let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
   ties: 0,
 };
+
+// console.log();
 
 const pickRandomMove = () => {
   let computerMove = "";
@@ -56,6 +58,8 @@ const playGame = (playerMove) => {
     score.ties += 1;
   }
 
+  localStorage.setItem("score", JSON.stringify(score));
+
   alert(
     `You picked ${playerMove}, computer picked ${computerMove}. ${result}!
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
@@ -75,7 +79,5 @@ const handleScissors = () => {
 };
 
 const handleScore = () => {
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
+  localStorage.removeItem("score");
 };

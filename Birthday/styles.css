@@ -1,0 +1,141 @@
+/* Basic resets */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://i.imgur.com/dAkPvUy.jpg'); /* Beautiful background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 2s ease-in-out; /* Adding fade-in animation */
+}
+
+/* Header styling */
+h1 {
+    color: #ffe066;
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
+    font-size: 1.8em; /* Adjust font size for smaller screens */
+    animation: glow 1s infinite alternate; /* Glowing effect */
+}
+
+/* Input and button styling */
+.input-container {
+    margin-bottom: 15px; /* Reduced margin for smaller screens */
+}
+
+input {
+    padding: 8px; /* Reduced padding for smaller screens */
+    font-size: 16px;
+    border: 2px solid #ff6b81;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+button {
+    padding: 8px 16px; /* Reduced padding for smaller screens */
+    font-size: 16px;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e55a70;
+}
+
+/* Message container styling */
+.wish-message-container {
+    margin-top: 15px; /* Reduced margin for smaller screens */
+}
+
+/* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; /* Reduced margin for smaller screens */
+}
+
+#birthdayImage {
+    width: 100%;
+    margin: auto;
+    max-width: 150px; /* Further reduce maximum width for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hide image initially */
+    animation: bounce 2s ease infinite; /* Adding bounce animation */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff6b81, 0 0 20px #ff6b81, 0 0 30px #ff6b81;
+    }
+    to {
+        text-shadow: 0 0 20px #ffe066, 0 0 30px #ffe066, 0 0 40px #ffe066;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Media query for smaller screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Further reduced padding for smaller screens */
+        width: 95%;
+        max-width: 350px; /* Slightly reduced max-width for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size for headers on mobile */
+    }
+
+    input, button {
+        width: 90%; /* Increased width for better touch targets on mobile */
+        font-size: 14px; /* Slightly reduced font size for inputs and buttons */
+    }
+
+    #birthdayImage {
+        max-width: 120px; /* Smaller image size for mobile */
+    }
+}

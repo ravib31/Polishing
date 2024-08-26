@@ -19,3 +19,6 @@ const person={
     city:"New York"
 }
 console.log(person["name"])
+
+const obj1=person
+console.log(obj1===person)

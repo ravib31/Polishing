@@ -20,5 +20,31 @@ const person={
 }
 console.log(person["name"])
 
-const obj1=person
+const obj1=person /*obj1 is a copy by reference of person object*/
+
 console.log(obj1===person)
+
+
+const person2={
+    name:"Johnny",
+    age:30,
+    city:"New York"
+}
+
+const {name} = person2; /*this is called destructuring*/
+console.log(name);
+
+
+const person3={
+    name:name,
+    // name ,
+    method :function ravi(){
+        console.log("this is method")
+    },
+    // method() {
+    //     console.log("this is method")
+    // }
+}
+
+console.log(person3.name);
+person3.method()

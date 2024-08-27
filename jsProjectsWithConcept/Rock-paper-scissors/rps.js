@@ -4,8 +4,15 @@ let score = JSON.parse(localStorage.getItem("score")) || {
   ties: 0,
 };
 
-// console.log();
+updateScore();
 
+// document.querySelector('.jsScore').innerHTML=`Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+// console.log();
+function updateScore() {
+  document.querySelector(
+    ".jsScore"
+  ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
 const pickRandomMove = () => {
   let computerMove = "";
   const randomNumber = Math.random();
@@ -59,11 +66,16 @@ const playGame = (playerMove) => {
   }
 
   localStorage.setItem("score", JSON.stringify(score));
+  updateScore();
+  document.querySelector(".jsResult").innerHTML = result;
+  document.querySelector(
+    ".jsMoves"
+  ).innerHTML = `You picked ${playerMove}, computer picked ${computerMove}.`;
 
-  alert(
-    `You picked ${playerMove}, computer picked ${computerMove}. ${result}!
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
-  );
+//   alert(
+//     `You picked ${playerMove}, computer picked ${computerMove}. ${result}!
+// Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+//   );
 };
 
 const handleRock = () => {
@@ -80,4 +92,8 @@ const handleScissors = () => {
 
 const handleScore = () => {
   localStorage.removeItem("score");
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  updateScore();
 };

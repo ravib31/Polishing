@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
-    <p>Rock Paper Scissors</p>
-    <button onclick="handleRock()">Rock</button>
-    <button onclick="handlePaper()">Paper</button>
-    <button onclick="handleScissors()">Scissors</button>
+    <p class="title">Rock Paper Scissors</p>
+    <button onclick="handleRock()" class="rock">✊</button>
+    <button onclick="handlePaper()" class="paper">✋</button>
+    <button onclick="handleScissors()" class="scissor">✌️</button>
     <p class="jsResult"></p>
     <p class="jsMoves"></p>
     <p class="jsScore"></p>
-    <button onclick="handleScore()">Reset Score</button>
+    <button onclick="handleScore()" class="resetButton">Reset Score</button>
     
 </body>
 <script src="./rps.js"></script>

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-</head>
-<body>
-    <p>Todo List</p>
-    <input placeholder="Enter Todo" class="js-input">
-    <input type="date" class="js-date">
-    <button onclick="addTodo()">Add</button>
-    <p class="js-todoList"></p>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p class="title">Todo List</p>
+    <div class="todoInputGrid">
+      <input placeholder="Enter Todo" class="js-input inputSection" />
+      <input type="date" class="js-date inputSection" />
+      <button onclick="addTodo()" class="addButton">Add</button>
+    </div>
+    <p class="js-todoList todoList"></p>
     <script src="./Todo.js"></script>
-</body>
+  </body>
 </html>

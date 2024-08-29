@@ -28,19 +28,28 @@ const pickRandomMove = () => {
 
 let isAutoPlaying = false;
 let intervalId;
-function handleAutoPlay(){
-  if(!isAutoPlaying){
-    intervalId=setInterval(function(){
+function handleAutoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
       const playerMove = pickRandomMove();
       playGame(playerMove);
-    },2000)
-    isAutoPlaying=true;
-  }else{
+    }, 2000);
+    isAutoPlaying = true;
+  } else {
     clearInterval(intervalId);
-    isAutoPlaying=false;
+    isAutoPlaying = false;
   }
- 
 }
+
+ document.body.addEventListener('keydown',(event)=>{
+  if(event.key==='r'){
+    playGame('Rock')
+  }else if(event.key==='p'){
+    playGame('Paper')
+  }else if(event.key==='s'){
+    playGame('Scissors')
+  }
+ })
 
 const playGame = (playerMove) => {
   const computerMove = pickRandomMove();
@@ -88,23 +97,33 @@ const playGame = (playerMove) => {
     ".jsMoves"
   ).innerHTML = `You picked ${playerMove}, computer picked ${computerMove}.`;
 
-//   alert(
-//     `You picked ${playerMove}, computer picked ${computerMove}. ${result}!
-// Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
-//   );
+  //   alert(
+  //     `You picked ${playerMove}, computer picked ${computerMove}. ${result}!
+  // Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+  //   );
 };
 
-const handleRock = () => {
-  playGame("Rock");
-};
 
-const handlePaper = () => {
-  playGame("Paper");
-};
+document.querySelector('.rock').addEventListener("click",()=>{
+  playGame('Rock')
+});
+document.querySelector('.paper').addEventListener("click",()=>{
+  playGame('Paper')
+});
+document.querySelector('.scissor').addEventListener("click",()=>{
+  playGame('Scissors')
+});
+// const handleRock = () => {
+//   playGame("Rock");
+// };
 
-const handleScissors = () => {
-  playGame("Scissors");
-};
+// const handlePaper = () => {
+//   playGame("Paper");
+// };
+
+// const handleScissors = () => {
+//   playGame("Scissors");
+// };
 
 const handleScore = () => {
   localStorage.removeItem("score");

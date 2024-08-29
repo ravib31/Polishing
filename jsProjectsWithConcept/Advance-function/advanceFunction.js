@@ -43,10 +43,43 @@ display1(function () {
 //   console.log("Hello Interval");
 // }, 3000)
 
-[
-    'makeDinner','washDishes','watchTV'
-].forEach(function (value,length) {
-    if(value==="washDishes") return
-    console.log(value,value.length)
-})
+// [
+//     'makeDinner','washDishes','watchTV'
+// ].forEach((value,length)=> {
+//     if(value==="washDishes") return
+//     console.log(value,value.length)
+// })
 
+// const regularFunction = function(){
+//     console.log("Regular function")
+// }
+// const arrowFunction = ()=>{
+//     console.log("Arrow function")
+// }
+// arrowFunction()
+
+// const obj2={
+//     methhod1:function(){
+//         console.log("This is shorthand method")
+//     },
+//     method2:()=>{
+//         console.log("Arrow method")
+//     }
+// }
+
+// const buttonElement = document.querySelector('.jsButton');
+// buttonElement.addEventListener('click',()=>{
+//     console.log("Button clicked")
+// });
+
+// buttonElement.removeEventListener('click',()=>{
+//     console.log("Button remove clicked")
+// })
+
+
+console.log([1,-3,5].filter((value,index)=>{
+    return value>0;
+}))
+
+console.log([2,3,4].map(value =>  value*2
+));

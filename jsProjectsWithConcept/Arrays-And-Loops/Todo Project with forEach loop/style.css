@@ -1,0 +1,40 @@
+
+body{
+    font-family: Arial;
+}.title{
+    font-size: 20px;
+    font-weight: 20px;
+}
+.todoList,.todoInputGrid{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 20px;
+    row-gap: 10px;
+    align-items: center;
+}
+.todoInputGrid{
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+.inputSection{
+    padding: 5px;
+    font-size: 15px;
+}
+.addButton{
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    /* font-size: 15px;
+    padding: 8px; */
+}
+.deleteButton{
+    background-color: darkred;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px;
+}

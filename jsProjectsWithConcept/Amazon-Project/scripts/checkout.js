@@ -1,6 +1,15 @@
 import { cart,removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
+import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@2.0.0-alpha.2/dist/index.mjs'
+
+
+// console.log(dayjs());
+const today = dayjs()
+const deliveryDate = today.add(7,"days").format('dddd, MMMM, D')
+const deliveryDate1 = today.add(4,"days").format('dddd, MMMM, D')
+const deliveryDate2 = today.add(2,"days").format('dddd, MMMM, D')
+console.log(deliveryDate)
 
 let cartSummaryHTML = "";
 
@@ -16,7 +25,7 @@ cart.forEach((cartItem) => {
   cartSummaryHTML += `
   <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
             <div class="delivery-date">
-              Delivery date: Tuesday, June 21
+             ${deliveryDate}
             </div>
 
             <div class="cart-item-details-grid">
@@ -56,7 +65,7 @@ cart.forEach((cartItem) => {
                     name="delivery-option-${matchingProduct.id}">
                   <div>
                     <div class="delivery-option-date">
-                      Tuesday, June 21
+                      ${deliveryDate}
                     </div>
                     <div class="delivery-option-price">
                       FREE Shipping
@@ -69,7 +78,7 @@ cart.forEach((cartItem) => {
                     name="delivery-option-${matchingProduct.id}">
                   <div>
                     <div class="delivery-option-date">
-                      Wednesday, June 15
+                      ${deliveryDate1}
                     </div>
                     <div class="delivery-option-price">
                       $4.99 - Shipping
@@ -82,7 +91,7 @@ cart.forEach((cartItem) => {
                     name="delivery-option-${matchingProduct.id}">
                   <div>
                     <div class="delivery-option-date">
-                      Monday, June 13
+                       ${deliveryDate2}
                     </div>
                     <div class="delivery-option-price">
                       $9.99 - Shipping

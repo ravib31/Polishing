@@ -1,8 +1,8 @@
 import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
-import { products } from "../../data/products.js";
+import { getProduct, products } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@2.0.0-alpha.2/dist/index.mjs";
-import { deliveryOptions } from "../../data/deliveryOptions.js";
+import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 
 // console.log(dayjs());
 // const today = dayjs();
@@ -17,20 +17,10 @@ let cartSummaryHTML = "";
 
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
-  let matchingProduct;
-  products.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
+  let matchingProduct= getProduct(productId);
   const deliveryOptionId = cartItem.deliveryOptionId;
-  let deliveryOption;
-  deliveryOptions.forEach((option) => {
-    if (option.id === deliveryOptionId) {
-      deliveryOption = option;
-    }
-  });
-  console.log(deliveryOption);
+  const deliveryOption = getDeliveryOption(deliveryOptionId);
+//   console.log(deliveryOption);
 
   const today = dayjs();
   const deliveryDate = today.add(deliveryOption.deliveryDays, "days");

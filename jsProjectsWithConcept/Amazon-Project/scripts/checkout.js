@@ -11,6 +11,8 @@ import { deliveryOptions } from "../data/deliveryOptions.js";
 // const deliveryDate2 = today.add(2, "days").format("dddd, MMMM, D");
 // console.log(deliveryDate);
 
+function renderOrderSummary(){
+
 let cartSummaryHTML = "";
 
 cart.forEach((cartItem) => {
@@ -94,9 +96,10 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
         ? "FREE Shipping"
         : `$${formatCurrency(deliveryOption.price)} - Shipping`;
     const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
+
+
     html += `
-       <div class="delivery-option js-delivery-option" data-product-id="${
-         matchingProduct.id}" 
+       <div class="delivery-option js-delivery-option" data-product-id="${matchingProduct.id}" 
          data-delivery-option-id="${deliveryOption.id}">
                   <input type="radio"
                   ${isChecked ? "checked" : ""} 
@@ -127,14 +130,20 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
     const container = document.querySelector(
       `.js-cart-item-container-${productId}`
     );
-    console.log(container);
+    // console.log(container);
     container.remove();
+    renderOrderSummary();
   });
+  
 });
 
-document.querySelectorAll(".js-delivery-option").forEach((element) => {
+document.querySelectorAll('.js-delivery-option').forEach((element) => {
   element.addEventListener("click", () => {
     const { productId, deliveryOptionId } = element.dataset;
     updateDeliveryOption(productId, deliveryOptionId);
+    renderOrderSummary();
   });
 });
+}
+
+renderOrderSummary();

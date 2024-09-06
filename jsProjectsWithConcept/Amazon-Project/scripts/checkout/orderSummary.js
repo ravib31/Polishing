@@ -3,6 +3,7 @@ import { getProduct, products } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@2.0.0-alpha.2/dist/index.mjs";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 // console.log(dayjs());
 // const today = dayjs();
@@ -123,6 +124,7 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
     // console.log(container);
     container.remove();
     renderOrderSummary();
+    renderPaymentSummary();
   });
   
 });
@@ -132,6 +134,7 @@ document.querySelectorAll('.js-delivery-option').forEach((element) => {
     const { productId, deliveryOptionId } = element.dataset;
     updateDeliveryOption(productId, deliveryOptionId);
     renderOrderSummary();
+    renderPaymentSummary();
   });
 });
 };

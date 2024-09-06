@@ -5,12 +5,7 @@ import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@2.0.0-alpha.2/dist/index.m
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
-// console.log(dayjs());
-// const today = dayjs();
-// const deliveryDate = today.add(7, "days").format("dddd, MMMM, D");
-// const deliveryDate1 = today.add(4, "days").format("dddd, MMMM, D");
-// const deliveryDate2 = today.add(2, "days").format("dddd, MMMM, D");
-// console.log(deliveryDate);
+
 
 export function renderOrderSummary(){
 

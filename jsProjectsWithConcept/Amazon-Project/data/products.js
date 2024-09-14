@@ -77,6 +77,29 @@ obj3.method();
 
 
 export let products = [];
+export function loadProductsFetch(){
+  const promise = fetch("https://supersimplebackend.dev/products")
+  .then((response)=>{
+    return response.json()
+   })
+ .then((data)=>{
+    // console.log(data);
+    products = data.map((productDetails)=>{
+      if(productDetails.type === "clothing"){
+        return new Clothing(productDetails);
+      }
+          return new Product(productDetails);
+    });
+    console.log("Loading products");
+  })
+  return promise;
+}
+
+// loadProductsFetch().then(()=>{
+//   console.log(products);
+// });
+
+
 export function loadProducts(fun){
   const xhr = new XMLHttpRequest();
   xhr.addEventListener("load",()=>{

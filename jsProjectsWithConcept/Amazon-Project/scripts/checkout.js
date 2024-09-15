@@ -6,13 +6,22 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 
 
 async function loadPage(){
+    try {
+        // throw 'Error1'
+
+        await loadProductsFetch()
+        const value = await new Promise((resolve,reject)=>{
+            loadCart(()=>{
+                // reject('Error3')
+                resolve();
+            });
+        })
+        
+    } catch (error) {
+        console.log('error found please try again later');
+    }
    
-    await loadProductsFetch()
-    await new Promise((resolve)=>{
-        loadCart(()=>{
-            resolve();
-        });
-    })
+   
     renderOrderSummary();
     renderPaymentSummary();
     

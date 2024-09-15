@@ -59,20 +59,20 @@ console.log(date)
 console.log(date.toLocaleTimeString())
 */
 
-function logThis(){
-  console.log(this);
-}
+// function logThis(){
+//   console.log(this);
+// }
 
-logThis()/*it will give undefine */
-logThis.call({name: "karan"})/*Now the value of this is karan using a method call*/
+/*logThis()/*it will give undefine */
+/*logThis.call({name: "karan"})/*Now the value of this is karan using a method call*/
 
-this;
-const obj3={
-  method:()=>{
-    console.log(this)
-  }
-}
-obj3.method();
+// this;
+// const obj3={
+//   method:()=>{
+//     console.log(this)
+//   }
+// }
+// obj3.method();
 
 
 
